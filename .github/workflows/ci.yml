@@ -3,15 +3,15 @@ name: CI
 on: push
 
 jobs:
-  check:
-    name: Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Brew audit
-        run: |
-          brew tap tako8ki/tap
-          brew audit --new-formula tako8ki/tap/frum
+  # check:
+  #   name: Check
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Brew audit
+  #       run: |
+  #         brew tap tako8ki/tap
+  #         brew audit --new-formula tako8ki/tap/frum
 
   install:
     name: Install
