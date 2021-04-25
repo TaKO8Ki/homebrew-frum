@@ -1,0 +1,19 @@
+name: CI
+
+on: push
+
+jobs:
+  install:
+    name: Install
+    strategy:
+      fail-fast: false
+      matrix:
+          os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install frum
+        run: |
+          brew install tako8ki/tap/frum
+          frum
+
