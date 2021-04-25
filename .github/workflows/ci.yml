@@ -15,5 +15,6 @@ jobs:
       - name: Install frum
         run: |
           brew install tako8ki/tap/frum
-          frum
+          frum install 2.6.5
+          frum local 2.6.5
 
