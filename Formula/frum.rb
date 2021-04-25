@@ -1,5 +1,5 @@
 class Frum < Formula
-  desc "A little bit fast and modern Ruby version manager written in Rust"
+  desc "Slightly fast and modern Ruby version manager written in Rust"
   homepage "https://github.com/TaKO8Ki/frum"
   url "https://github.com/TaKO8Ki/frum/archive/v0.1.0-alpha.0.tar.gz"
   sha256 "5f2aa0f1fea5ffe780f86232edec9af3946d0b0540ad68a377387712ab24f11c"
