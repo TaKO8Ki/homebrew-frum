@@ -1,0 +1,31 @@
+name: CI
+
+on: push
+
+jobs:
+  # check:
+  #   name: Check
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Brew audit
+  #       run: |
+  #         brew tap tako8ki/tap
+  #         brew audit --new-formula tako8ki/tap/frum
+
+  install:
+    name: Install
+    strategy:
+      fail-fast: false
+      matrix:
+          os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install frum
+        run: |
+          brew install tako8ki/tap/frum
+          eval "$(frum init)"
+          frum install 2.6.5
+          frum local 2.6.5
+
