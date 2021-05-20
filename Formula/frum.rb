@@ -1,17 +1,16 @@
 class Frum < Formula
   desc "Slightly fast and modern Ruby version manager written in Rust"
   homepage "https://github.com/TaKO8Ki/frum"
-  version "0.1.0-beta0"
+  version "0.1.0"
   license "MIT"
   head "https://github.com/TaKO8Ki/frum.git"
-  url_version = "0.1.0-beta.0"
 
   if OS.mac?
-    url "https://github.com/TaKO8Ki/frum/releases/download/v#{url_version}/frum-v#{url_version}-x86_64-apple-darwin.tar.gz"
-    sha256 "6b26c75c351c19d748451f316e264d79a6423e242f812b493419e8cab1b1ac91"
+    url "https://github.com/TaKO8Ki/frum/releases/download/v#{version}/frum-v#{version}-x86_64-apple-darwin.tar.gz"
+    sha256 "f6aad22a8916e9a3a12ed3bd77f47eb08ac6575e7f6146bef36318157e24fb98"
   elsif OS.linux?
-    url "https://github.com/TaKO8Ki/frum/releases/download/v#{url_version}/frum-v#{url_version}-x86_64-unknown-linux-musl.tar.gz"
-    sha256 "e9c2d21ffdff08a0d965d5f813245ba6d0a05590037dc67d30a98354639f60d0"
+    url "https://github.com/TaKO8Ki/frum/releases/download/v#{version}/frum-v#{version}-x86_64-unknown-linux-musl.tar.gz"
+    sha256 "993d676523135e2a01b304f6bc21828f231e845e10ce03f3af32bbfd1acfc8d4"
   end
 
   livecheck do
