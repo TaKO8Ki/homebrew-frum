@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install frum
         run: |
-          brew install tako8ki/tap/frum
+          brew install frum
           eval "$(frum init)"
           frum install 2.6.5
           frum local 2.6.5
