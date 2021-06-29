@@ -24,6 +24,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install frum
         run: |
+          brew update
           brew install frum
           eval "$(frum init)"
           frum install 2.6.5
