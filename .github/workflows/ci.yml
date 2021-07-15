@@ -18,10 +18,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-          os: [macos-latest]
+          os: [macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+      - name: Install fnm
+        run: |
+          brew update
+          brew install fnm
       - name: Install frum
         run: |
           brew update
