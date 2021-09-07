@@ -3,30 +3,18 @@ name: CI
 on: push
 
 jobs:
-  # check:
-  #   name: Check
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Brew audit
-  #       run: |
-  #         brew tap tako8ki/tap
-  #         brew audit --new-formula tako8ki/tap/frum
-
   install:
     name: Install
     strategy:
       fail-fast: false
       matrix:
-          os: [macos-latest]
+          os: [macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - name: Install frum
+      - name: Install gobang
         run: |
           brew update
-          brew install frum
-          eval "$(frum init)"
-          frum install 2.6.5
-          frum local 2.6.5
+          brew install gobang
+          gobang -h
 
