@@ -15,6 +15,6 @@ jobs:
       - name: Install gobang
         run: |
           brew update
-          brew install gobang
+          brew install tako8ki/tap/gobang
           gobang -h
 
