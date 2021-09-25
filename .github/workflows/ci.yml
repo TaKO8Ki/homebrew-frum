@@ -18,7 +18,10 @@ jobs:
           brew update
           brew install tako8ki/tap/gobang
           gobang -h
-      - name: Install gobang with scooop
+      - uses: MinoruSekine/setup-scoop
+      - name: Install gobang with scoop
         if: runner.os == 'windows'
-        run: scoop install gobang
+        run: |
+          scoop install gobang
+          gobang -h
 
