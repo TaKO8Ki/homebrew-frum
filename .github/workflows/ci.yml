@@ -18,7 +18,7 @@ jobs:
           brew update
           brew install tako8ki/tap/gobang
           gobang -h
-      - uses: MinoruSekine/setup-scoop
+      - run: iex (New-Object net.webclient).downloadstring('https://get.scoop.sh')
       - name: Install gobang with scoop
         if: runner.os == 'windows'
         run: |
