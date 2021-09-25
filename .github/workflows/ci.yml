@@ -8,13 +8,24 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-          os: [macos-latest, ubuntu-latest]
+          os: [macos-latest, ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - name: Install gobang
+        if: runner.os != 'windows'
         run: |
           brew update
           brew install tako8ki/tap/gobang
           gobang -h
+      - name: Install gobang with scoop
+        if: runner.os == 'windows'
+        run: |
+          Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+          scoop help
+          scoop update
+          scoop install gobang
+          gobang -h
+          
 
