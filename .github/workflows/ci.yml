@@ -13,11 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install gobang
+        if: runner.os != 'windows'
         run: |
           brew update
           brew install tako8ki/tap/gobang
           gobang -h
       - name: Install gobang with scooop
-        if: runner.os != 'windows'
+        if: runner.os == 'windows'
         run: scoop install gobang
 
