@@ -18,14 +18,14 @@ jobs:
           brew update
           brew install tako8ki/tap/gobang
           gobang -h
-      - run: |
-          Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-          scoop help
       - name: Install gobang with scoop
         if: runner.os == 'windows'
         run: |
+          Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+          scoop help
           scoop update
           scoop install gobang
           gobang -h
+          
 
